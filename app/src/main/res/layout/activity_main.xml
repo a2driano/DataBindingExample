@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="user"
+            type="ua.work.home.databindingexample.model.User"/>
+
+        <variable
+            name="main"
+            type="ua.work.home.databindingexample.MainActivity"/>
+
+        <import type="android.view.View"/>
+        <import type="ua.work.home.databindingexample.utils.UtilsText"/>
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@{UtilsText.capitalizeText(user.getName)}"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@{user.getSurName != null ? user.getSurName : @string/default_name}"
+            android:visibility="@{user.getSurName != null ? View.VISIBLE : View.GONE}"
+            android:textSize="18sp"/>
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:text="@{user.getSurName != null ? user.getSurName : @string/default_name}"-->
+            <!--android:textSize="18sp"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/user_surname"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:textSize="18sp"-->
+        <!--android:text="@{user.getSurName}"/>-->
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->main.clickToast()}"
+            android:text="Button"/>
+
+    </LinearLayout>
+
+
+</layout>

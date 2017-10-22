@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DataBindingExample</string>
+    <string name="default_name">Empty variable</string>
+</resources>
