@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 //        User user = new User("Andrew", "Android");
-        User user = new User("Andrew", "Papai");
+//        User user = new User("Andrew", "Papai");
+        User user = new User("Andrew", "Papai", "https://www.atomix.com.au/media/2015/06/atomix_user31.png");
         binding.setUser(user);
         binding.setMain(this);
     }

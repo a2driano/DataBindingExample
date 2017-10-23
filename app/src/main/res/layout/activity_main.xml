@@ -60,6 +60,19 @@
             android:onClick="@{()->main.clickToast()}"
             android:text="Button"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@{@string/name_sentence(user.getName, user.getSurName)}"
+            android:textSize="18sp"/>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="fitXY"
+            android:src="@{user.getmUrl}"/>
+
     </LinearLayout>
 
 
