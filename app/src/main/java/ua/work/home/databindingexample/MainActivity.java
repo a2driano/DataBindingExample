@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         binding.setMain(this);
     }
 
+
     public void clickToast() {
         Toast.makeText(MainActivity.this, "Click to button", Toast.LENGTH_SHORT).show();
         Log.d("TAG", "*********************** click");
