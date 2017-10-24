@@ -2,4 +2,6 @@
     <string name="app_name">DataBindingExample</string>
     <string name="default_name">Empty variable</string>
     <string name="name_sentence">Name: %1$s, surname: %2$s</string>
+    <string name="hello">Name: %1$s</string>
+
 </resources>

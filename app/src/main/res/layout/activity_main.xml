@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,10 +11,15 @@
             type="ua.work.home.databindingexample.model.User"/>
 
         <variable
+            name="viewModel"
+            type="ua.work.home.databindingexample.model.ViewModel"/>
+
+        <variable
             name="main"
             type="ua.work.home.databindingexample.MainActivity"/>
 
         <import type="android.view.View"/>
+
         <import type="ua.work.home.databindingexample.utils.UtilsText"/>
     </data>
 
@@ -35,15 +42,15 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="@{user.getSurName != null ? user.getSurName : @string/default_name}"
-            android:visibility="@{user.getSurName != null ? View.VISIBLE : View.GONE}"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:visibility="@{user.getSurName != null ? View.VISIBLE : View.GONE}"/>
 
         <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_margin="5dp"-->
-            <!--android:text="@{user.getSurName != null ? user.getSurName : @string/default_name}"-->
-            <!--android:textSize="18sp"/>-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:text="@{user.getSurName != null ? user.getSurName : @string/default_name}"-->
+        <!--android:textSize="18sp"/>-->
 
         <!--<TextView-->
         <!--android:id="@+id/user_surname"-->
@@ -70,8 +77,42 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
             android:scaleType="fitXY"
-            android:src="@{user.getmUrl}"/>
+            android:src="@{user.getmUrl}"
+            app:error="@{@drawable/error}"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@{viewModel.user.firstName}"/>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:addEditTextWatcher="@{viewModel.userNameTextWatcher}"/>
+
+
+
+        <!--<EditText-->
+            <!--android:id="@+id/editText2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:ems="10"-->
+            <!--android:inputType="textPersonName"-->
+            <!--app:addEditTextWatcher="@{viewModel.userNameTextWatcher}"/>-->
+
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@{viewModel.user.getSurName}"/>-->
 
     </LinearLayout>
 

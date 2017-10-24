@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import ua.work.home.databindingexample.databinding.ActivityMainBinding;
 import ua.work.home.databindingexample.model.User;
+import ua.work.home.databindingexample.model.UserTwoSide;
+import ua.work.home.databindingexample.model.ViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,8 +20,11 @@ public class MainActivity extends AppCompatActivity {
 //        User user = new User("Andrew", "Android");
 //        User user = new User("Andrew", "Papai");
         User user = new User("Andrew", "Papai", "https://www.atomix.com.au/media/2015/06/atomix_user31.png");
+        UserTwoSide userTwoSide = new UserTwoSide("", "");
+        ViewModel viewModel = new ViewModel();
         binding.setUser(user);
         binding.setMain(this);
+        binding.setViewModel(viewModel);
     }
 
 

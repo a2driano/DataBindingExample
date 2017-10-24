@@ -1,6 +1,7 @@
 package ua.work.home.databindingexample.utils;
 
 import android.databinding.BindingAdapter;
+import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -11,10 +12,11 @@ import com.squareup.picasso.Picasso;
 
 public class ImageUtils {
 
-    @BindingAdapter({"android:src"})
-    public static void loadImage(ImageView view, String url) {
+    @BindingAdapter({"android:src", "app:error"})
+    public static void loadImage(ImageView view, String url, Drawable error) {
         Picasso.with(view.getContext())
                 .load(url)
+                .error(error)
                 .into(view);
     }
 }
