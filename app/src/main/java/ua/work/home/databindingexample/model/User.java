@@ -3,24 +3,26 @@ package ua.work.home.databindingexample.model;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
+import ua.work.home.databindingexample.BR;
+
 /**
  * Created by Andrii Papai on 22.10.2017.
  */
 
 public class User extends BaseObservable {
-    private String mName;
-    private String mSurName;
+    public String name;
+    private String surName;
     private String mUrl;
 
     public User(String name, String surName) {
-        mName = name;
-        mSurName = surName;
+        this.name = name;
+        this.surName = surName;
     }
 
-    public User(String mName, String mSurName, String mUrl) {
-        this.mName = mName;
-        this.mSurName = mSurName;
-        this.mUrl = mUrl;
+    public User(String name, String surName, String url) {
+        this.name = name;
+        this.surName = surName;
+        this.mUrl = url;
     }
 
     @Bindable
@@ -34,19 +36,20 @@ public class User extends BaseObservable {
 
     @Bindable
     public String getName() {
-        return mName;
+        return name;
     }
 
     public void setName(String name) {
-        mName = name;
+        this.name = name;
+        notifyPropertyChanged(BR.name);
     }
 
     @Bindable
     public String getSurName() {
-        return mSurName;
+        return surName;
     }
 
     public void setSurName(String surName) {
-        mSurName = surName;
+        this.surName = surName;
     }
 }
